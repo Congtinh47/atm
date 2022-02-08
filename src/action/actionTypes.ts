@@ -1,1 +1,1 @@
-export const GET_ALL_ATM_DATA = "GET_ALL_ATM_DATA";
+export const GET_ATM_DATA = "GET_ATM_DATA";
