@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../ultils/device";
 export const AtmShowPage = styled.div`
 	max-width: 1400px;
 	margin: 0 auto;
@@ -10,6 +11,7 @@ export const AtmShowPage = styled.div`
 		flex-basis: 50%;
 		background: white;
 		text-align: center;
+		justify-content: space-between;
 		display: flex;
 		flex-wrap: wrap;
 		padding: 10px;
@@ -65,5 +67,10 @@ export const AtmShowPage = styled.div`
 	}
 	.transaction-index {
 		font-size: 22px;
+	}
+	@media ${devices.mobileL} {
+		flex-direction: column;
+		.atm-group {
+		}
 	}
 `;

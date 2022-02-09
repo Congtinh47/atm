@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../ultils/device";
 export const LoginStyles = styled.div`
 	background: linear-gradient(
 		90deg,
@@ -73,5 +74,13 @@ export const LoginStyles = styled.div`
 		border: none;
 		border-radius: 20px;
 		cursor: pointer;
+	}
+	@media ${devices.mobileL} {
+		.sign-form {
+			margin: auto 10px;
+			max-width: 300px;
+			width: 100%;
+			margin-left: 10px;
+		}
 	}
 `;

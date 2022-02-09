@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../ultils/device";
 
 export const NavbarStyles = styled.div`
 	background: white;
@@ -26,6 +27,7 @@ export const NavbarStyles = styled.div`
 		align-items: center;
 		position: relative;
 		cursor: pointer;
+		margin-bottom: 10px;
 	}
 	.avatar {
 		padding: 5px;
@@ -45,6 +47,10 @@ export const NavbarStyles = styled.div`
 	.button-login:hover {
 		background: green;
 		color: white;
+	}
+	@media ${devices.mobileL} {
+		flex-direction: column-reverse;
+		
 	}
 	.
 `;
