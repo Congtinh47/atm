@@ -3,11 +3,15 @@ import { FormikHelpers } from "formik";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { loginServices } from "../../services/login.service";
-import { FormValues } from "./type";
+import { FormValues } from "./login";
 
 export default function useSignInForm() {
 	const [isSignIn, setIsSignIn] = useState(true);
 	const history = useHistory();
+	const handleSubmitForm = isSignIn ? handleLogin : handleSignUp;
+	const changeForm = () => {
+		setIsSignIn(!isSignIn);
+	};
 	async function handleLogin(
 		values: FormValues,
 		formikHelpers: FormikHelpers<FormValues>
@@ -53,10 +57,5 @@ export default function useSignInForm() {
 			console.log(err);
 		}
 	}
-	function changeForm() {
-		setIsSignIn(!isSignIn);
-	}
-	const handleSubmitForm = isSignIn ? handleLogin : handleSignUp;
-
 	return { isSignIn, handleSubmitForm, changeForm };
 }

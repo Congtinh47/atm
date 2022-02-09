@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
-import { initialValue, SignInSchema } from "./login";
-import { LoginStyles } from "./styles";
 import InputCustom from "../../components/InputCustom";
-import useSignInForm from "./hook";
+import { initialValue, SignInSchema } from "./login";
+import useSignInForm from "./useSignInForm";
+import { LoginStyles } from "./styles";
 
-function LoginPage() {
+const LoginPage = () => {
 	const { changeForm, isSignIn, handleSubmitForm } = useSignInForm();
 	return (
 		<LoginStyles>
@@ -16,8 +16,8 @@ function LoginPage() {
 			>
 				<Form className="sign-form">
 					<div className="form-header">{isSignIn ? "Sign In" : "Sign Up"}</div>
-					<InputCustom name="email" placeholder="username or email" />
-					<InputCustom name="password" placeholder="password" />
+					<InputCustom name="email" placeholder="username or email" type="email" />
+					<InputCustom name="password" placeholder="password" type="password" />
 					<div className="group-bottom">
 						<button type="submit" className="btn-pink">
 							{isSignIn ? "Sign In" : "Sign Up"}
@@ -32,6 +32,6 @@ function LoginPage() {
 			</Formik>
 		</LoginStyles>
 	);
-}
+};
 
 export default LoginPage;

@@ -8,7 +8,7 @@ export default function usehandleAtm() {
 			toast("ATM is bussy");
 		} else {
 			const resp: AxiosResponse = await atmService.deleteATM(id);
-			console.log(resp);
+			// console.log(resp);
 			if (resp.status === 200 && resp.data.remove) {
 				console.log("delete success");
 			}

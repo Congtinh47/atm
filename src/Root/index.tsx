@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import LoginPage from "../pages/loginPage";
-import AtmPage from "../pages/atmPage/inđex";
-function App() {
+import LoginPage from "../pages/LoginPage";
+import AtmPage from "../pages/AtmPage/inđex";
+export default function Root() {
 	return (
 		<BrowserRouter>
 			<Switch>
@@ -12,5 +12,3 @@ function App() {
 		</BrowserRouter>
 	);
 }
-
-export default App;

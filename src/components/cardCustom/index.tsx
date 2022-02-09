@@ -1,23 +1,28 @@
-import { AxiosResponse } from "axios";
-import React from "react";
+import React, { FC } from "react";
 import usehandleAtm from "../../hooks/usehandleAtm";
 import atm from "./../../assets/image/atm.png";
 import deleteImage from "./../../assets/image/delete.jpg";
 import { CardCustomStyles } from "./styles";
-import { ICardCustom } from "./type";
-function CardCustom({
+interface ICardCustom {
+	id: string;
+	atmName: string;
+	userName: string;
+	transactionStatus: string;
+}
+
+const CardCustom: FC<ICardCustom> = ({
 	id = "",
 	atmName = "",
 	userName = "",
 	transactionStatus = "",
-}: ICardCustom) {
+}) => {
 	const { deleteATM } = usehandleAtm();
-
 	return (
 		<CardCustomStyles>
 			<div className="image-card">
 				<img src={atm} alt="atm" />
 			</div>
+
 			<div
 				className="delete-button"
 				onClick={() => deleteATM(id, transactionStatus)}
@@ -30,6 +35,6 @@ function CardCustom({
 			<div>{userName}</div>
 		</CardCustomStyles>
 	);
-}
+};
 
-export default CardCustom;
+export default React.memo(CardCustom);

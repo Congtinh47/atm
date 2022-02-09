@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { IInitialTransaction } from "../../types/typedata";
-import { IInitialATM } from "./../../types/typedata";
+import { IInitialATM } from "../../types/typedata";
 export const initialValueTransaction: IInitialTransaction = {
 	namePeople: "",
 	transaction: "",

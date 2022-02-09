@@ -26,7 +26,8 @@ export const AtmShowPage = styled.div`
 		overflow: scroll;
 	}
 	.processed-client p {
-		height: 20px;
+		height: 300px;
+		width: 100%:
 	}
 	.user-queue {
 		box-sizing: border-box;

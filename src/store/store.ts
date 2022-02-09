@@ -12,6 +12,4 @@ const store = createStore(
 	composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(rootSaga);
-// store.dispatch(actions.apiGetAllOrders());
-// store.dispatch(actions.apiGetAllProducts());
 export default store;

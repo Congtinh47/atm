@@ -14,22 +14,23 @@ export function useHandlerTransactionsBox() {
 	const { transaction: isTransactionBox, atm: isatmbox } = useSelector(
 		(state: RootState) => state.popupBox
 	);
-	function displayTransactionBox() {
+	const displayTransactionBox = () => {
 		dispatch(display_transaction_box(true));
-	}
-	function hiddenTransactionBox() {
+	};
+	const hiddenTransactionBox = () => {
 		dispatch(display_transaction_box(false));
-	}
-	function displayAddAtmBox() {
+	};
+	const displayAddAtmBox = () => {
 		dispatch(display_add_atm_box(true));
-	}
-	function hiddenAddAtmBox() {
+	};
+	const hiddenAddAtmBox = () => {
 		dispatch(display_add_atm_box(false));
-	}
-	async function addTransaction(
+	};
+	////////////////////////////////////////////
+	const addTransaction = async (
 		values: IInitialTransaction,
 		formikHelpers: FormikHelpers<IInitialTransaction>
-	) {
+	) => {
 		const { namePeople, transaction } = values;
 		const resp = await atmService.addTransaction({
 			namePeople: namePeople,
@@ -41,11 +42,12 @@ export function useHandlerTransactionsBox() {
 			dispatch(display_transaction_box(false));
 			dispatch(apiGetAllAtm());
 		}
-	}
-	async function addNewAtm(
+	};
+	////////////////////////////////////////////
+	const addNewAtm = async (
 		values: IInitialATM,
 		formikHelpers: FormikHelpers<IInitialATM>
-	) {
+	) => {
 		const resp = await atmService.addATM({
 			name: values.name,
 		});
@@ -54,8 +56,9 @@ export function useHandlerTransactionsBox() {
 		} else {
 			dispatch(display_add_atm_box(false));
 		}
-	}
+	};
 
+	////////////////////////////////////////////
 	const addNew: any = isTransactionBox
 		? addTransaction
 		: isatmbox

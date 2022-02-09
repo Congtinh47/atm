@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import atmReducer from "./atmReducer.reducer";
-import popupBoxReducer from "./popupBoxReducer.reducers";
+import popupBoxReducer from "./popupBoxReducer.reducer";
 
 const rootReducer = combineReducers({
 	atm: atmReducer,

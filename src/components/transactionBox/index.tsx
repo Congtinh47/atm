@@ -1,17 +1,18 @@
 import React from "react";
-import { TransactionBoxStyle } from "./styles";
 import user from "../../assets/image/user.png";
 import atm from "../../assets/image/atm.png";
 import { Form, Formik } from "formik";
+import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
+import InputCustom from "../InputCustom";
 import {
 	createATMSchema,
 	createTransactionSchema,
 	initialValueATM,
 	initialValueTransaction,
 } from "./transactionBox";
-import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
-import InputCustom from "../InputCustom";
-function TransactionBox() {
+import { TransactionBoxStyle } from "./styles";
+
+const TransactionBox = () => {
 	const { isdataBox, addNew, hiddenBox } = useHandlerTransactionsBox();
 	const initialValues: any =
 		isdataBox === "transition" ? initialValueTransaction : initialValueATM;
@@ -37,9 +38,14 @@ function TransactionBox() {
 						<InputCustom
 							name={isdataBox === "transition" ? "namePeople" : "name"}
 							placeholder={isdataBox === "transition" ? "add user name" : "add ATM"}
+							type="text"
 						/>
 						{isdataBox === "transition" && (
-							<InputCustom name="transaction" placeholder="add transaction number" />
+							<InputCustom
+								name="transaction"
+								placeholder="add transaction number"
+								type="text"
+							/>
 						)}
 						<div className="group-bottom">
 							<button type="button" className="btn-danger" onClick={hiddenBox}>
@@ -55,6 +61,6 @@ function TransactionBox() {
 			</div>
 		</TransactionBoxStyle>
 	);
-}
+};
 
-export default TransactionBox;
+export default React.memo(TransactionBox);

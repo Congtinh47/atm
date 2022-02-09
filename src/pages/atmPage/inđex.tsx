@@ -1,15 +1,16 @@
-import CardCustom from "../../components/cardCustom";
+import CardCustom from "../../components/CardCustom";
 import { Atm, UserQueue } from "../../types/typedata";
-import Navbar from "../navbar";
-import useGetData from "./hook";
-import { AtmShowPage } from "./styles";
+import Navbar from "../Navbar";
 import user from "./../../assets/image/user.png";
 import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
-import TransactionBox from "../../components/transactionBox";
+import TransactionBox from "../../components/TransactionBox";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useGetData from "./useGetData";
+import { AtmShowPage } from "./styles";
+import React from "react";
 
-function AtmPage() {
+const AtmPage = () => {
 	const { atmData, processedClient, queue } = useGetData();
 	const { isdataBox } = useHandlerTransactionsBox();
 	return (
@@ -59,6 +60,6 @@ function AtmPage() {
 			<ToastContainer />
 		</>
 	);
-}
+};
 
 export default AtmPage;

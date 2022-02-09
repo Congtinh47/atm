@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { useLogoutHandler } from "./hook";
-import { useHandlerTransactionsBox } from "./../../hooks/useHandlerTransactionsBox";
+import React from "react";
+import { useLogoutHandler } from "./useLogoutHandler";
+import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
 import { NavbarStyles } from "./style";
 const currentUser = "Current User";
-function Navbar() {
+const Navbar = () => {
 	const { isButtonLogout, showButtonLogout, handleLogout } = useLogoutHandler();
 	const { displayTransactionBox, displayAddAtmBox } =
 		useHandlerTransactionsBox();
+
 	return (
 		<NavbarStyles>
 			<div className="addData">
@@ -30,6 +31,6 @@ function Navbar() {
 			</div>
 		</NavbarStyles>
 	);
-}
+};
 
-export default Navbar;
+export default React.memo(Navbar);
