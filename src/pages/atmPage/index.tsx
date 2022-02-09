@@ -22,16 +22,18 @@ const AtmPage = () => {
 			<Navbar />
 			<AtmShowPage>
 				<div className="atm-group">
-					{atmData.map((atm: Atm) => (
-						<div className="atm-card" key={atm.id}>
-							<CardCustom
-								id={atm.id}
-								atmName={atm.name}
-								userName={atm.client}
-								transactionStatus={atm.status}
-							/>
-						</div>
-					))}
+					<div className="card-group">
+						{atmData.map((atm: Atm) => (
+							<div className="atm-card" key={atm.id}>
+								<CardCustom
+									id={atm.id}
+									atmName={atm.name}
+									userName={atm.client}
+									transactionStatus={atm.status}
+								/>
+							</div>
+						))}
+					</div>
 					<div className="processed-client">
 						<h2>Processed client</h2>
 						<p>

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
-import AtmPage from "../pages/AtmPage/inđex";
+import AtmPage from "../pages/AtmPage";
 export default function Root() {
 	return (
 		<BrowserRouter>

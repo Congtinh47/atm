@@ -1,6 +1,7 @@
 import styled from "styled-components";
 export const CardCustomStyles = styled.div`
 	width: 100%;
+	margin-bottom: 30px;
 	position: relative;
 	.image-card {
 		width: 100%;
@@ -12,7 +13,7 @@ export const CardCustomStyles = styled.div`
 		position: absolute;
 		width: 30px;
 		top: 0;
-		right: 0;
+		right: 30px;
 		cursor: pointer;
 	}
 	.delete-button > img {

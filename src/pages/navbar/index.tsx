@@ -2,6 +2,9 @@ import React from "react";
 import { useLogoutHandler } from "./useLogoutHandler";
 import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
 import { NavbarStyles } from "./style";
+import Button from "@mui/material/Button";
+import { Stack } from "@mui/material";
+
 const currentUser = "Current User";
 const Navbar = () => {
 	const { isButtonLogout, showButtonLogout, handleLogout } = useLogoutHandler();
@@ -11,12 +14,14 @@ const Navbar = () => {
 	return (
 		<NavbarStyles>
 			<div className="addData">
-				<button className="btn" onClick={displayAddAtmBox}>
-					Add new ATM
-				</button>
-				<button className="btn" onClick={displayTransactionBox}>
-					Add Transaction
-				</button>
+				<Stack spacing={2} direction="row">
+					<Button variant="contained" color="primary" onClick={displayAddAtmBox}>
+						Add new ATM
+					</Button>
+					<Button variant="contained" onClick={displayTransactionBox}>
+						Add Transaction
+					</Button>
+				</Stack>
 			</div>
 			<div className="userStatus" onClick={showButtonLogout}>
 				<div className="user-name">{currentUser}</div>

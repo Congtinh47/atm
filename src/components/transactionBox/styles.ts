@@ -5,7 +5,7 @@ export const TransactionBoxStyle = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.7);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -18,7 +18,8 @@ export const TransactionBoxStyle = styled.div`
 		width: 400px;
 		text-align: center;
 		padding: 20px;
-		boxsizing: border-box;
+		box-sizing: border-box;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	}
 	.image-container {
 		width: 100%;
@@ -43,6 +44,10 @@ export const TransactionBoxStyle = styled.div`
 		border-radius: 20px;
 		cursor: pointer;
 	}
+	.btn-primitive:hover {
+		transform: scale(1.1);
+		transition: all 0.1s ease-out;
+	}
 	.btn-danger {
 		padding: 15px 50px;
 		background: red;
@@ -51,5 +56,9 @@ export const TransactionBoxStyle = styled.div`
 		border: none;
 		border-radius: 20px;
 		cursor: pointer;
+		transition: all 0.1s ease-out;
+	}
+	.btn-danger:hover {
+		transform: scale(1.1);
 	}
 `;

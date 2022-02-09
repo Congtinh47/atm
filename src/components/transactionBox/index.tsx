@@ -11,7 +11,6 @@ import {
 	initialValueTransaction,
 } from "./transactionBox";
 import { TransactionBoxStyle } from "./styles";
-
 const TransactionBox = () => {
 	const { isdataBox, addNew, hiddenBox } = useHandlerTransactionsBox();
 	const initialValues: any =

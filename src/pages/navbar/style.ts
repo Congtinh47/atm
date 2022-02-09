@@ -14,12 +14,12 @@ export const NavbarStyles = styled.div`
 	}
 	.btn {
 		margin: 0 4px;
-		background-color: blue;
+		/* background-color: blue;
 		color: white;
 		border: 0px; // an element labeled ".something" inside <Thing>
 		display: block;
 		padding: 5px 10px;
-		cursor: pointer;
+		cursor: pointer; */
 	}
 	.userStatus {
 		display: flex;
