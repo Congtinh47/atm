@@ -19,8 +19,8 @@ export function* workerGetAtmData() {
 	try {
 		const res: ResponseGenerator = yield call(atmService.getAtm);
 		const data = res.data;
-		yield put(actions.gotATMSuccess(data));
+		yield put(actions.got_atm_success(data));
 	} catch (error: any) {
-		yield put(actions.gotATMFail(error.message));
+		yield put(actions.got_atm_fail(error.message));
 	}
 }

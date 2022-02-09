@@ -1,5 +1,5 @@
 import {
-	apiGetAllAtm,
+	api_get_all_atm,
 	display_add_atm_box,
 	display_transaction_box,
 } from "../action/actionCreator";
@@ -40,7 +40,7 @@ export function useHandlerTransactionsBox() {
 			formikHelpers.setErrors({ namePeople: "has wrong here" });
 		} else {
 			dispatch(display_transaction_box(false));
-			dispatch(apiGetAllAtm());
+			dispatch(api_get_all_atm());
 		}
 	};
 	////////////////////////////////////////////

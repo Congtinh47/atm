@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { apiGetAllAtm } from "../../action/actionCreator";
+import { api_get_all_atm } from "../../action/actionCreator";
 import { RootState } from "../../reducers/root.reducer";
 import { TypeAtmData } from "../../types/typedata";
 
@@ -19,7 +19,7 @@ export default function useGetData() {
 		////////////////////////////////
 		if (dataUserLogin) {
 			const tGetAtm = setInterval(() => {
-				dispatch(apiGetAllAtm());
+				dispatch(api_get_all_atm());
 			}, 2000);
 			//clear timer when mounted
 			return () => clearInterval(tGetAtm);

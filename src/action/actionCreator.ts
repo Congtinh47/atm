@@ -1,13 +1,13 @@
 import { TypeAtmData } from "../types/typedata";
 import * as types from "./actionTypes";
-export const apiGetAllAtm = () => ({
+export const api_get_all_atm = () => ({
 	type: types.GET_ATM_DATA,
 });
-export const gotATMSuccess = (data: TypeAtmData) => ({
+export const got_atm_success = (data: TypeAtmData) => ({
 	type: types.GOT_ATM_SUCCESS,
 	payload: data,
 });
-export const gotATMFail = (error: string) => ({
+export const got_atm_fail = (error: string) => ({
 	type: types.GOT_ATM_ERROR,
 	payload: error,
 });
