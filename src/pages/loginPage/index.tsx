@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import InputCustom from "../../components/InputCustom";
 import { initialValue, SignInSchema } from "./login";
 import useSignInForm from "./useSignInForm";
-import { LoginStyles } from "./styles";
+import { LoginStyles } from "./styled";
 
 const LoginPage = () => {
 	const { changeForm, isSignIn, handleSubmitForm } = useSignInForm();

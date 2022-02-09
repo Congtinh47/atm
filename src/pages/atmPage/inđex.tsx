@@ -7,10 +7,14 @@ import TransactionBox from "../../components/TransactionBox";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useGetData from "./useGetData";
-import { AtmShowPage } from "./styles";
+import { AtmShowPage } from "./styled";
 import React from "react";
+import Loading from "../../components/Loadding/Loadding";
+import { useSelector } from "react-redux";
+import { RootState } from "../../reducers/root.reducer";
 
 const AtmPage = () => {
+	const loading = useSelector((state: RootState) => state.loading.isLoading);
 	const { atmData, processedClient, queue } = useGetData();
 	const { isdataBox } = useHandlerTransactionsBox();
 	return (
@@ -56,8 +60,7 @@ const AtmPage = () => {
 				</div>
 				{isdataBox && <TransactionBox />}
 			</AtmShowPage>
-
-			<ToastContainer />
+			{loading && <Loading />}
 		</>
 	);
 };

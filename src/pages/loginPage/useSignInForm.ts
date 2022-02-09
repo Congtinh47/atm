@@ -2,7 +2,9 @@ import { AxiosResponse } from "axios";
 import { FormikHelpers } from "formik";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { turnLoadingOn } from "../../action/actionCreator";
 import { loginServices } from "../../services/login.service";
+import store from "../../store/store";
 import { FormValues } from "./login";
 
 export default function useSignInForm() {
@@ -45,13 +47,14 @@ export default function useSignInForm() {
 				email,
 				password,
 			});
-			console.log(resp);
+			// console.log(resp);
 			if (resp.data === "email already exists !") {
 				//toastify
 				formikHelpers.setErrors({ email: "email already exists ! " });
 			}
 			if (resp && resp.status === 200 && resp.data !== "email already exists !") {
 				history.push("/");
+				store.dispatch(turnLoadingOn());
 			}
 		} catch (err) {
 			console.log(err);

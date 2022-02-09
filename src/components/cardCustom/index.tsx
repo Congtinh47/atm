@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import usehandleAtm from "../../hooks/usehandleAtm";
 import atm from "./../../assets/image/atm.png";
 import deleteImage from "./../../assets/image/delete.jpg";
-import { CardCustomStyles } from "./styles";
+import { CardCustomStyles } from "./styled";
 interface ICardCustom {
 	id: string;
 	atmName: string;

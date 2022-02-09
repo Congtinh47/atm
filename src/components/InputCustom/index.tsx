@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ErrorMessage, Field } from "formik";
-import { ErrorMessageStyles, InputCustomStyle } from "./style";
+import { ErrorMessageStyles, InputCustomStyle } from "./styled";
 interface Iprops {
 	name: string;
 	placeholder: string;

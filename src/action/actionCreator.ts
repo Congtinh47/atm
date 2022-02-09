@@ -19,3 +19,11 @@ export const display_add_atm_box = (show: boolean) => ({
 	type: types.DISPLAY_ADD_ATM_BOX,
 	payload: show,
 });
+
+// Show Loading
+export const turnLoadingOn = () => ({
+	type: types.LOADING_ON,
+});
+export const turnLoadingOff = () => ({
+	type: types.LOADING_OFF,
+});

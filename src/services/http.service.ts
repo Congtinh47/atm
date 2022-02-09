@@ -13,14 +13,18 @@ export const httpToken = axios.create({
 http.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
 		// loaddingOn
+		// store.dispatch(turnLoadingOn());
 		return config;
 	},
-	(error) => {}
+	(error) => {
+		// store.dispatch(turnLoadingOff());
+	}
 );
 
 http.interceptors.response.use(
 	(response) => {
 		//hide loadding
+
 		const { data } = response;
 		//store token
 		if (data.user && data.message === "Login successfully !") {
@@ -53,6 +57,7 @@ httpToken.interceptors.request.use(
 	},
 	(error) => {
 		if (error && error.status === 401) {
+			// store.dispatch(turnLoadingOff());
 			//redirect to login page
 			// hien pop up
 			//refresh token
@@ -63,9 +68,11 @@ httpToken.interceptors.request.use(
 httpToken.interceptors.response.use(
 	(response) => {
 		//hide loadding
+		// store.dispatch(turnLoadingOff());
 		return response;
 	},
 	(error) => {
+		// store.dispatch(turnLoadingOff());
 		// const status = error.response.status;
 		//hide loadding
 		//     console.log(error);
