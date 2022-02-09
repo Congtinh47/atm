@@ -46,6 +46,7 @@ export const LoginStyles = styled.div`
 		color: #4b2354;
 		font-weight: bold;
 		font-size: 18px;
+		outline: green;
 	}
 	.group-bottom {
 		width: 100%;

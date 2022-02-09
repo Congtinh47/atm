@@ -12,6 +12,7 @@ export const InputCustomStyle = styled.div`
 		font-weight: bold;
 		font-size: 18px;
 		margin-bottom: 3px;
+		outline: blue;
 	}
 `;
 export const ErrorMessageStyles = styled.div`

@@ -4,7 +4,6 @@ export const NavbarStyles = styled.div`
 	background: white;
 	max-width: 1400px;
 	margin: 0 auto;
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -19,6 +18,7 @@ export const NavbarStyles = styled.div`
 		border: 0px; // an element labeled ".something" inside <Thing>
 		display: block;
 		padding: 5px 10px;
+		cursor: pointer;
 	}
 	.userStatus {
 		display: flex;
@@ -46,4 +46,5 @@ export const NavbarStyles = styled.div`
 		background: green;
 		color: white;
 	}
+	.
 `;

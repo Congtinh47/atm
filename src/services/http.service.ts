@@ -42,7 +42,7 @@ httpToken.interceptors.request.use(
 		// loaddingOn
 		const dataUserLogin = window.localStorage.getItem("data_user_login");
 		const { PARIVATE_TOKEN } = JSON.parse(dataUserLogin as string) || "";
-		console.log(PARIVATE_TOKEN);
+		// console.log(PARIVATE_TOKEN);
 		if (!PARIVATE_TOKEN) {
 			//goto login
 		}

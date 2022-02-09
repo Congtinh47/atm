@@ -12,4 +12,9 @@ export const loginServices = {
 			...config,
 		});
 	},
+	register: async (data: TypeLoginRequestBody, config?: AxiosRequestConfig) => {
+		return http.post("/api/v1/auth/register", data, {
+			...config,
+		});
+	},
 };

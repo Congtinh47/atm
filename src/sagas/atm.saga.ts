@@ -1,8 +1,15 @@
 import * as types from "./../action/actionTypes";
+import * as actions from "./../action/actionCreator";
 import { call, put, takeLatest } from "redux-saga/effects";
-import { atmService } from "./../services/atm.service";
-import { AxiosResponse } from "axios";
-import { TypeAtmData } from "../types/typedata";
+import { atmService } from "../services/atm.service";
+export interface ResponseGenerator {
+	config?: any;
+	data?: any;
+	headers?: any;
+	request?: any;
+	status?: number;
+	statusText?: string;
+}
 //watcher
 export default function* watchGetAtmData() {
 	yield takeLatest(types.GET_ATM_DATA, workerGetAtmData);
@@ -10,9 +17,10 @@ export default function* watchGetAtmData() {
 //worker
 export function* workerGetAtmData() {
 	try {
-		const res: AxiosResponse<TypeAtmData> = yield call(atmService.getAtm);
-		console.log(res);
+		const res: ResponseGenerator = yield call(atmService.getAtm);
+		const data = res.data;
+		yield put(actions.gotATMSuccess(data));
 	} catch (error: any) {
-		// yield put(actions.getAllProductsFailure(error.message));
+		yield put(actions.gotATMFail(error.message));
 	}
 }

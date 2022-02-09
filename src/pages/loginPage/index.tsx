@@ -6,26 +6,27 @@ import InputCustom from "../../components/InputCustom";
 import useSignInForm from "./hook";
 
 function LoginPage() {
-	const [isSignIn, setIsSignIn] = useState(true);
-	const { handleLogin } = useSignInForm();
+	const { changeForm, isSignIn, handleSubmitForm } = useSignInForm();
 	return (
 		<LoginStyles>
 			<Formik
 				initialValues={initialValue}
 				validationSchema={SignInSchema}
-				onSubmit={handleLogin}
+				onSubmit={handleSubmitForm}
 			>
 				<Form className="sign-form">
-					<div className="form-header">{isSignIn && "Sign In"}</div>
+					<div className="form-header">{isSignIn ? "Sign In" : "Sign Up"}</div>
 					<InputCustom name="email" placeholder="username or email" />
 					<InputCustom name="password" placeholder="password" />
 					<div className="group-bottom">
 						<button type="submit" className="btn-pink">
-							Sign In
+							{isSignIn ? "Sign In" : "Sign Up"}
 						</button>
 					</div>
 					<div className="group-bottom">
-						<button className="btn-white">Sign Up</button>
+						<button type="button" className="btn-white" onClick={changeForm}>
+							{isSignIn ? "Sign Up" : "Sign In"}
+						</button>
 					</div>
 				</Form>
 			</Formik>

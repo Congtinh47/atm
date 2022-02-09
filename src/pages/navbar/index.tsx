@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import useLogoutHandler from "./hook";
-
+import { useLogoutHandler } from "./hook";
+import { useHandlerTransactionsBox } from "./../../hooks/useHandlerTransactionsBox";
 import { NavbarStyles } from "./style";
 const currentUser = "Current User";
 function Navbar() {
 	const { isButtonLogout, showButtonLogout, handleLogout } = useLogoutHandler();
+	const { displayTransactionBox, displayAddAtmBox } =
+		useHandlerTransactionsBox();
 	return (
 		<NavbarStyles>
 			<div className="addData">
-				<button className="btn">Add new ATM</button>
-				<button className="btn">Add Transition</button>
+				<button className="btn" onClick={displayAddAtmBox}>
+					Add new ATM
+				</button>
+				<button className="btn" onClick={displayTransactionBox}>
+					Add Transaction
+				</button>
 			</div>
 			<div className="userStatus" onClick={showButtonLogout}>
 				<div className="user-name">{currentUser}</div>
