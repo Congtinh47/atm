@@ -56,6 +56,7 @@ export const LoginStyles = styled.div`
 		align-items: center;
 		margin-bottom: 15px;
 	}
+
 	.btn-pink {
 		padding: 15px 50px;
 		background: #bd59d4;
@@ -67,6 +68,23 @@ export const LoginStyles = styled.div`
 		font-weight: bold;
 		cursor: pointer;
 	}
+	.btn-pink:hover {
+		opacity: 0.9;
+	}
+	.btn-orange {
+		padding: 15px 50px;
+		background: orange;
+		color: white;
+		border: none;
+		border-radius: 20px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.btn-pink:hover {
+		opacity: 0.9;
+	}
 	.btn-white {
 		padding: 15px 50px;
 		background: white;
@@ -75,7 +93,10 @@ export const LoginStyles = styled.div`
 		border-radius: 20px;
 		cursor: pointer;
 	}
-	@media ${devices.mobileL} {
+	.btn-white:hover {
+		color: blue;
+	}
+	@media ${devices.tablet} {
 		.sign-form {
 			margin: auto 10px;
 			max-width: 300px;

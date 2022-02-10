@@ -19,12 +19,12 @@ const LoginPage = () => {
 					<InputCustom name="email" placeholder="username or email" type="email" />
 					<InputCustom name="password" placeholder="password" type="password" />
 					<div className="group-bottom">
-						<button type="submit" className="btn-pink">
+						<button type="submit" className={isSignIn ? "btn-pink" : "btn-orange"}>
 							{isSignIn ? "Sign In" : "Sign Up"}
 						</button>
 					</div>
 					<div className="group-bottom">
-						<button type="button" className="btn-white" onClick={changeForm}>
+						<button type="reset" className="btn-white" onClick={changeForm}>
 							{isSignIn ? "Sign Up" : "Sign In"}
 						</button>
 					</div>

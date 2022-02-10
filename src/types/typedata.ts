@@ -4,7 +4,7 @@ export interface Atm {
 	name: string;
 	remove: boolean;
 	status: string;
-	transaction: number;
+	transaction: string;
 }
 export interface UserQueue {
 	name: string;

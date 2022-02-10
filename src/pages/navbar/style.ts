@@ -28,6 +28,10 @@ export const NavbarStyles = styled.div`
 		position: relative;
 		cursor: pointer;
 		margin-bottom: 10px;
+		font-size: 22px;
+	}
+	.userStatus:hover{
+		color: green;
 	}
 	.avatar {
 		padding: 5px;
@@ -43,12 +47,14 @@ export const NavbarStyles = styled.div`
 		width: 80px;
 		background: yellow;
 		border: 1px solid black;
+		border-radius: 5px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	}
 	.button-login:hover {
 		background: green;
 		color: white;
 	}
-	@media ${devices.mobileL} {
+	@media ${devices.tablet} {
 		flex-direction: column-reverse;
 		
 	}

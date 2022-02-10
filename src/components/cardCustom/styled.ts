@@ -7,7 +7,7 @@ export const CardCustomStyles = styled.div`
 		width: 100%;
 	}
 	.image-card img {
-		width: 80%;
+		width: 70%;
 	}
 	.delete-button {
 		position: absolute;
@@ -23,7 +23,7 @@ export const CardCustomStyles = styled.div`
 		color: Orange;
 		font-size: 30px;
 		font-weight: bold;
-		padding: 10px 0px;
+		padding: 0px;
 	}
 	.atm-name {
 		padding: 5px;

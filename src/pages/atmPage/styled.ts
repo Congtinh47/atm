@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { devices } from "../../ultils/device";
 export const AtmShowPage = styled.div`
+	@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 10px;
@@ -11,33 +12,43 @@ export const AtmShowPage = styled.div`
 		flex-basis: 70%;
 		background: white;
 	}
-	.card-group{		
+	.card-group {
 		box-sizing: border-box;
 		display: flex;
 		width: 100%;
+		height: 820px;
 		flex-wrap: wrap;
-		padding: 20px;
 		text-align: center;
 		justify-content: start;
+		overflow: auto;
 	}
 	.atm-card {
+		box-sizing: border-box;
 		flex-basis: 33%;
 		background: white;
 		margin-bottom: 20px;
+		padding: 0px 5px;
 	}
 	.processed-client {
 		text-align: left;
-		overflow: scroll;
+
+		overflow: auto;
 		box-sizing: border-box;
 		padding: 10px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	}
-	.processed-client h2{
-		margin-top:0;
+	.processed-client h2 {
+		margin-top: 0;
 	}
 	.processed-client p {
+		font-size: 26px;
 		height: 150px;
-		width: 100%:
+		width: 100%;
 		box-sizing: border-box;
+	}
+	.processed-client p span {
+		font-family: "Dancing Script", cursive;
+		font-size: 22px;
 	}
 	.user-queue {
 		box-sizing: border-box;
@@ -52,40 +63,14 @@ export const AtmShowPage = styled.div`
 		overflow: scroll;
 		box-sizing: border-box;
 	}
-	.queue-item {
-		box-sizing: border-box;
-		height: 100px;
-		background: white;
-		padding: 5px;
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-		border-radius: 15px;
-		border:	1px solid rgba(0, 0, 0, 0.4)
-	}
-	.image-queue {
-		/* height: 100%; */
-		display: flex;
-		width: 30%;
-	}
-	.image-queue > img {
-		width: 50%;
-		/* height: 100%; */
-	}
-	.user-info {
-		width: 70%;
-	}
-	.user-name {
-		font-size: 22px;
-		margin-bottom: 10px;
-	}
-	.transaction-index {
-		font-size: 22px;
-	}
-	@media ${devices.mobileL} {
+
+	@media ${devices.tablet} {
 		flex-direction: column;
 		.atm-group {
+			flex-direction: column;
+		}
+		.atm-card {
+			flex-basis: 100%;
 		}
 	}
 `;

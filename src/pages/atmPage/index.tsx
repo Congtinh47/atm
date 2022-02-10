@@ -1,22 +1,23 @@
+import React from "react";
 import CardCustom from "../../components/CardCustom";
 import { Atm, UserQueue } from "../../types/typedata";
 import Navbar from "../Navbar";
-import user from "./../../assets/image/user.png";
 import { useHandlerTransactionsBox } from "../../hooks/useHandlerTransactionsBox";
 import TransactionBox from "../../components/TransactionBox";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useGetData from "./useGetData";
 import { AtmShowPage } from "./styled";
-import React from "react";
 import Loading from "../../components/Loadding/Loadding";
 import { useSelector } from "react-redux";
 import { RootState } from "../../reducers/root.reducer";
+import UserInfor from "../../components/UserInfor";
+import { lastHusmanTransaction } from "../../ultils/format";
 
 const AtmPage = () => {
 	const loading = useSelector((state: RootState) => state.loading.isLoading);
 	const { atmData, processedClient, queue } = useGetData();
 	const { isdataBox } = useHandlerTransactionsBox();
+
 	return (
 		<>
 			<Navbar />
@@ -30,6 +31,7 @@ const AtmPage = () => {
 									atmName={atm.name}
 									userName={atm.client}
 									transactionStatus={atm.status}
+									transaction={atm.transaction}
 								/>
 							</div>
 						))}
@@ -37,7 +39,8 @@ const AtmPage = () => {
 					<div className="processed-client">
 						<h2>Processed client</h2>
 						<p>
-							<b>Transaction done:</b> {processedClient}
+							<b>Transaction done:</b>{" "}
+							<span>{lastHusmanTransaction(processedClient)}</span>
 						</p>
 					</div>
 				</div>
@@ -47,15 +50,11 @@ const AtmPage = () => {
 					<div className="group-queue">
 						{queue.map((que: UserQueue, index: number) => {
 							return (
-								<div className="queue-item" key={index}>
-									<div className="image-queue">
-										<img src={user} alt="user" />
-									</div>
-									<div className="user-info">
-										<div className="user-name">{que.name}</div>
-										<div className="transaction-index">{que.transaction}</div>
-									</div>
-								</div>
+								<UserInfor
+									name={que.name}
+									transaction={que.transaction}
+									index={index}
+								/>
 							);
 						})}
 					</div>
